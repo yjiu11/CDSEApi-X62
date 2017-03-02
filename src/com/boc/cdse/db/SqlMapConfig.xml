@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig
+    PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"
+    "http://www.ibatis.com/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+	<settings cacheModelsEnabled="true" enhancementEnabled="true"
+		lazyLoadingEnabled="true" errorTracingEnabled="true" maxRequests="32"
+		maxSessions="10" maxTransactions="5" useStatementNamespaces="true" />
+		<!-- 
+		<transactionManager type="JDBC"><dataSource type="SIMPLE">
+			<property name="JDBC.Driver"
+				value="oracle.jdbc.pool.OracleConnectionPoolDataSource" />
+				<property name="JDBC.ConnectionURL"
+				value="jdbc:oracle:thin:@localhost:1521:sa" />
+			<property name="JDBC.Username" value="system" />
+			<property name="JDBC.Password" value="sa" />-->
+				<!--
+			<property name="JDBC.ConnectionURL"
+				value="jdbc:oracle:thin:@21.7.2.82:1524:orcl" />
+			<property name="JDBC.Username" value="aps_cds" />
+			<property name="JDBC.Password" value="aps_cds" />
+			-->
+			<!--  
+		</dataSource>
+	</transactionManager>
+		 	 -->
+	<transactionManager type="JDBC">
+		<dataSource type="JNDI">
+			<property name="DataSource" value="comp/env/jdbc/nuwccpdb"/>
+		</dataSource>
+	</transactionManager>
+	
+	<sqlMap resource="com/boc/cdse/db/CardProduct.xml" />
+	
+</sqlMapConfig>

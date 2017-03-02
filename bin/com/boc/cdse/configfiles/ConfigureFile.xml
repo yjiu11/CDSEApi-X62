@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Basic>
+  <RunTimeEnvironment DomainDir="/nuwshfs/CDS/strategy" JNDIDES="" QueueConnectionFactory="javax/jms/JmsConnectionFactory" RecvQueueName="CDSReqQ" SendQueueName="CDSRespQ" WebServerContextFactory="com.ibm.websphere.naming.WsnInitialContextFactory" JmsContextUrl="iiop://localhost:2809/" WebUser="websphere" WebPassword="websphere" StrategyListenerTime="300000">
+<LogDefinition CurrentPoint="000001" LogDir="/nuwshfs/CDS/log" Size="50000">
+  <LogFileType>
+    <type Name="PersonalCard" fileName="PersonalCard"/>
+    <type Name="ComanyCard" fileName="ComanyCard"/>
+    <type Name="Error" fileName="Error"/>
+    <type Name="AppLog" fileName="AppLog"/>
+    <type Name="CdsLog" fileName="CdsLog"/>
+    <type Name="CdsXmlLog" fileName="CdsXmlLog"/>
+  </LogFileType>
+</LogDefinition>
+<Report Dir="/nuwshfs/CDS/reports"/>
+<Interface HasExtraArithCfg="false" Dir="/nuwshfs/CDS/interface" />
+<DataSource HasDataBase="true" DataSourceQ="CDSEDataSaveQ" />
+</RunTimeEnvironment></Basic>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="CardProduct">
+	<!-- Use type aliases to avoid typing the full classname every time. -->
+	<typeAlias alias="CarProductModel" type="com.boc.cdse.db.model.CarProductModel" />
+
+	<!--
+		Result maps describe the mapping between the columns returned from a
+		query, and the class properties. A result map isn't necessary if the
+		columns (or aliases) match to the properties exactly.
+	-->
+	<resultMap id="CardProductResult" class="CarProductModel">
+		<result property="productCode" column="APP_PRODUCT_CODE" />
+		<result property="name" column="APP_PRODUCT_DESC" />
+		<result property="grageFlag" column="GRADE_FLAG" />
+		<result property="typeFlag" column="TYPE_FLAG" />
+		<result property="exchangeRate" column="EXCHANGE_RATE" />
+	</resultMap>
+
+	<!-- 查询所有的项目信息 -->
+	<select id="getCardProductList" parameterClass="java.util.Map" resultMap="CardProductResult">
+		select APP_PRODUCT_CODE,APP_PRODUCT_DESC, GRADE_FLAG, TYPE_FLAG,EXCHANGE_RATE from cds_cardsettings
+	</select>
+
+</sqlMap>
